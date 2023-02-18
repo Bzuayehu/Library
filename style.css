@@ -1,0 +1,308 @@
+:root {
+    --white: #F7F1F0;
+    --cream: #dee9eb;
+    --blue: #1F3E59;
+    --dark-blue: #1A3246;
+    --green: #478647;
+    --dark-green: #337433;
+    --red: #D05050;
+    --orange: #e79d13;
+    --orange2: #f7a40a;
+    --dark-red: #BE3E3E;
+    
+    
+  }
+  input:focus,
+button:focus {
+  outline: none;
+}
+.container{
+    display: flex;
+    min-height: 100vh;
+  font-family: "Montserrat-Regular", Arial, Helvetica, sans-serif;
+  color: var(--blue);
+}
+#side-form{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    /* width: 360px; */
+    padding: 30px;
+    background-color: var(--cream);
+}
+.theme-books {
+    --fa-secondary-color: var(--white);
+    --fa-secondary-opacity: 1.0;
+  }
+  #logo {
+    margin: 0 0 0 0;
+    font-family: "MarcellusSC-Regular", "Times New Roman", Georgia, Serif;
+    font-size: 55px;
+    color: var(--blue);
+    text-align: center;
+  }
+  #title,#name,#number{
+    width: 100%;
+    background-color: var(--cream);
+    border: none;
+    padding: 15px 0 5px 0;
+    border-bottom: 2px dotted;
+    color: var(--blue);
+  }
+  .input-block {
+    position: relative;
+  }
+  .input-block span.placeholder {
+    position: absolute;
+    margin: 17px 0;
+    left: 0;
+    transition: all 0.3s;
+    transform-origin: 0% 0%;
+    pointer-events: none;
+
+  }
+  .input-block input:valid + span.placeholder,
+.input-block input:focus + span.placeholder {
+  transform: scale(0.8) translateY(-30px);
+}
+.input-block input:focus {
+    border-bottom: 2px dotted var(--orange2) !important;
+  }
+  .checkbox{
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 5px;
+  }
+  .checkbox-input input{
+    opacity: 0;
+    width: 1rem;
+    height: 1rem;
+  }
+  .checkbox-control {
+    display: inline-grid;
+    align-self: center;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid;
+    border-radius: 2px;
+  }
+  .checkbox-input{
+    display: grid;
+    grid-template-areas: "checkbox";
+  }
+  .checkbox-input > *{
+    grid-area: checkbox;
+  }
+  .checkbox-control svg {
+    opacity: 0;
+  }
+  .checkbox-input input:checked
+ + .checkbox-control svg {
+  opacity: 1;
+  background-color: var(--blue);
+  color: var(--white);
+}
+#add-book {
+    width: 200px;
+    padding: 19px 0;
+    margin-top: 40px;
+    border: 1px solid var(--orange);
+    border-radius: 50px;
+    background-color: var(--orange);
+    color: var(--white);
+    transition: 0.3s;
+  }
+  #add-book:hover {
+    cursor: pointer;
+    border-color: var(--orange2);
+    background-color: var(--orange2);
+    transition: 0.3s;
+  }
+  .validation-block {
+    height: 40px;
+  }
+  .validation-text {
+    display: none;
+    margin: 0;
+    font-size: 13px;
+    color: var(--red);
+  }
+  .project-info {
+    cursor: pointer;
+  }
+  .project-info .tooltip-text {
+    visibility: hidden;
+    padding: 10px;
+    position: absolute;
+    background-color: var(--orange);
+    text-align: center;
+    color: var(--white);
+    border-radius: 2px;
+    z-index: 1;
+    bottom: 100%;
+  }
+  .project-info:hover .tooltip-text {
+    visibility: visible;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0 0 30px 0;
+  }
+  .footer a {
+    text-decoration: none;
+    color: #1F3E59;
+    font-weight: 900;
+  }
+  #crafted-by {
+    margin-bottom: 0;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 75%;
+    /* width: calc(100% - 360px); */
+    padding: 30px;
+    background-color: var(--white);
+  }
+  #library-info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 30px;
+    padding: 0 25px;
+    font-size: 18px; 
+  }
+  .info{
+    background-color: var(--orange2);
+    padding: 10px;
+  }
+  .delete-all-btn {
+    display: none;
+    width: 150px;
+    border: 1px solid var(--red);
+    border-radius: 50px;
+    background-color: var(--red);
+    color: var(--white);
+    transition: 0.3s;
+    padding: 15px 5px; 
+    margin:30px  10px;
+  }
+  .btns{
+display: flex;
+align-items: flex-end;
+
+  }
+  #delete-all-btn:hover,
+.confirm-removal:hover {
+  cursor: pointer;
+  border-color: var(--dark-red);
+  background-color: var(--dark-red);
+}
+
+#books-list {
+    width: 70%;
+    border-collapse: collapse;
+  }
+  #books-list td {
+    padding: 25px;
+  }
+  #table-header {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+
+  .book-info {
+    border-bottom: 2px dotted var(--blue);
+  }
+  .book-info i {
+    padding: 5px;
+    font-size: 20px;
+  }
+
+  .book-info i:hover,
+.close-modal:hover,
+.cancel-removal:hover {
+  cursor: pointer;
+}
+.fa-check {
+    color: var(--green);
+    transition: 0.3s;
+  }
+  .fa-check:hover {
+    color: var(--dark-green);
+  }
+  .fa-times,
+.fa-trash-alt {
+  color: var(--red);
+  transition: 0.3s;
+}
+.fa-times:hover,
+.fa-trash-alt:hover {
+  color: var(--dark-red);
+}
+#modal {
+    display: none;
+    position: fixed;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-card {
+    position: relative;
+    margin: auto;
+    width: 30%;
+    border: 2px solid var(--blue);
+    border-radius: 2px;
+    box-shadow: rgb(46, 46, 46, 0.2) 0px 2px 8px 0px;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--orange);
+    color: var(--white);
+  }
+  .modal-header h2 {
+    margin: 0;
+    padding: 20px;
+  }
+
+  .close-modal {
+    align-self: flex-start;
+    margin: 0 20px 0 0;
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 900;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--white);
+  }
+  .modal-options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .cancel-removal {
+    border: none;
+    background-color: transparent;
+    color: var(--orange);
+  }
+  .confirm-removal {
+    height: 40px;
+    margin-left: 15px;
+    padding: 0 10px;
+    background-color: var(--red);
+    color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 2px;
+    transition: 0.3s;
+  }

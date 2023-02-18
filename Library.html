@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="bootstrap/modern-normalize.min.css"> 
+  <link href="bootstrap/fontawesome.min.css" rel="stylesheet">
+  <link href="bootstrap/duotone.min.css" rel="stylesheet">
+  <link href="bootstrap/solid.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="container"> 
+    <div id="side-form">
+            <header>
+                <h1 id="logo"><i class="fad fa-books theme-books"></i> Library</i></h1>
+            </header>
+
+            <form action="">
+                <div class="input-block">
+                    <input type="text" id="title" name="title" autocomplete="off" required>
+                    <span class="placeholder">What is the title of the book?</span>
+                    <div class="validation-block">
+                        <p class="validation-text title">Please fill out this field</p>
+                    </div>
+                </div>
+                <div class="input-block">
+                    <input type="text" id="name" name="name" autocomplete="off" required>
+                    <span class="placeholder">Who is the author of the book?</span>
+                    <div class="validation-block">
+                        <p class="validation-text name">Please fill out this field</p>
+                    </div>
+                </div>
+                <div class="input-block">
+                    <input type="text" id="number" name="number" autocomplete="off" required>
+                    <span class="placeholder">How many pages are in the book?</span>
+                    <div class="validation-block">
+                        <p class="validation-text number">Please enter a positive number</p>
+                    </div>
+                </div>
+                <label class="checkbox">
+                  <span class="checkbox-input">
+                    <input type="checkbox" name="checkbox" autocomplete="off">
+                    <span class="checkbox-control">
+                      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">
+                        <path fill='none' stroke='currentColor' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59'></svg>
+                    </span>
+                  </span>
+                  <span class="checkbox-label">I have already read this book!</span>
+                </label>
+                <input type="button" value="ADD A NEW BOOK" id="add-book">
+            </form>
+            <footer class="footer">
+                <p class="project-info">
+                    <i class="fas fa-info-circle hover-icon"></i>
+                    <span class="tooltip-text">
+                      This is a small Library App, where you can add new books,
+                      delete old ones, change status of your books to read/unread and see your library statistics.
+                      <b>The data is stored in localStorage</b>.
+                    </span>
+                     Hover to read about this project
+                </p>
+                <p id="crafted-by"> ☽ Crafted by
+                    <a href="https://github.com/Bzuayehu" target="_blank" >Bzuayehu</a> |
+                    <a href="https://github.com/Bzuayehu/library" target="_blank">Source</a> ☾
+                  </p>
+            </footer>
+        </div>
+        <main class="content">
+            <div id="library-info">
+                <p class="info">BOOKS READ: <span id="books-read"></span></p>
+                <p class="info">BOOKS UNREAD: <span id="books-unread"></span></p>
+                <p class="info">TOTAL BOOKS: <span id="total-books"></span></p>
+              </div>
+              <table id="books-list">
+                <thead id="table-header">
+                    <tr>
+                        <td>TITLE</td>
+                        <td>AUTHOR</td>
+                        <td>PAGES</td>
+                        <td>STATUS</td>
+                        <td>REMOVE</td>
+                      </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+              </table>
+              <div class="btns">
+                <button type="button" Class=" all delete-all-btn" id="delete-all-btn">DELETE ALL</button>
+                <!-- <button type="button" class="read delete-all-btn">DELETE READ BOOKS</button>
+                <button type="button" class="unread delete-all-btn">DELETE UNREAD BOOKS</button> -->
+              </div>
+              
+              <div id="modal" class="close">
+                <div class="modal-card">
+                  <div class="modal-header">
+                    <h2>DELETE BOOKS</h2>
+                    <span class="close-modal close">&times;</span>
+                  </div>
+                  <div class="modal-content">
+                    <p>Do you really want to delete all the books from your library?</p>
+                    <div class="modal-options">
+                      <button type="button" class="cancel-removal close">Cancel</button>
+                      <button type="button" class="confirm-removal">DELETE ALL</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </main> 
+        <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
